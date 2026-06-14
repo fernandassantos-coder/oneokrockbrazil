@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.nav-logo-img {
+    width: 95px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Remove a bolinha dos itens de lista*/
+ul {
+    list-style: none;
+}
+
+/* Remove o sublinhado dos itens com link*/
+a {
+    text-decoration: none;
+}
+
+.section-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+header {
+    padding: 8px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    border-bottom: 2px  solid #333;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ajustar alinhamento da lista dentro do nav-menu na barra de navegação*/
+.navbar .nav-menu ul {
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Alinha  os elementos verticalmente*/
+}
+
+/* Adiciona uma borda com fundo transparente e transição suave nos items da barra denavegação*/
+.nav-item-link {
+    color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: all 0.3 ease;
+}
+
+/* Adiciona efeiton "neon" ao passar o cursor entre os item da barra de navegação*/
+.nav-item-link:hover {
+    color: white;
+    background-color: #ff4d4d;
+    box-shadow: 0 0 15px #ff4d4d, 0 0 30px #ff4d4d;
+}
