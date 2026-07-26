@@ -6,6 +6,8 @@
     <title>One Ok Rock Brazil</title>
     <link rel="icon" type="image/png" href="imagens/aba-logo.png">
     <link rel="stylesheet" href="oorbr.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -60,23 +62,41 @@
         </nav>
     </header>
     <main>
-        <section class="main-section">
-            <div class="main-content">
-                <div class="main-image">
-                    <img src="imagens/main-image.png" alt="">
-                </div>
-                <div class="main-details">
-                    <p class="info-main">FAN SITE NÃO OFICIAL</p>
-                    <h2 class="oor-main-subtitle">ONE OK ROCK</h2>
-                    <p class="description-main">Vídeos traduzidos, comunidade, eventos, e tudo sobre a maior banda de rock do Japão.</p>
-                </div>
+    <section class="main-section">
+
+        <div class="main-image"> <!-- Imagem em sua própria div - irmã do main-content -  impede que a imagem seja renderizada em cima do conteúdo -->
+            <img src="imagens/main-image-oor.png" alt="">
+        </div>
+
+        <div class="main-content">
+            <div class="main-details">
+                <p class="info-main">FAN SITE NÃO OFICIAL</p>
+
+                <h1 class="oor-main-subtitle">ONE OK ROCK</h1>
+
+                <p class="description-main">
+                    Vídeos traduzidos, comunidade, eventos e tudo sobre a maior banda de rock do Japão.
+                </p>
+
                 <div class="btn-main">
-                    <a href="" class="btn-disco">Discografia</a>
-                    <a href="" class="btn-comunidade">Comunidade</a>
+                    <a href="#" class="btn-disco">
+                        <i class="fa-solid fa-compact-disc"></i>
+                        Discografia</a>
+                    <a href="#" class="btn-comunidade">
+                        <i class="fa-solid fa-arrows-down-to-people"></i>
+                        Comunidade</a>
+                </div>
+
+                <div class="indicador-scroll">
+                    <div class="mouse">
+                        <span></span>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+
+    </section>
+</main>
 
     <script src="oorbr.js" defer></script>
 </body>

@@ -10,7 +10,7 @@ body {
 }
 
 .nav-logo-img {
-    width: 95px;
+    width: 80px; /* Define a largura da imagem do logotipo na barra de navegação */
     height: auto;
     object-fit: contain;
 }
@@ -32,11 +32,14 @@ a {
 }
 
 header {
-    padding: 8px 0;
+    padding: -4px 0; /* Ajusta o espaçamento interno da barra de navegação */
     position: fixed;
     width: 100%;
     z-index: 5;
     border-bottom: 2px  solid #333;
+    background-color: black;
+    top: 0;
+    left: 0;
 }
 
 header .navbar {
@@ -57,7 +60,8 @@ header .navbar {
     color: #ff4d4d;
     border: 2px solid #ff4d4d;
     background-color: transparent;
-    padding: 8px 16px;
+    padding: 6px 14px; /* Define o espaçamento interno das barras de navegação */
+    font-size: 14px; /* Define o tamanho da fonte dos itens da barra de navegação */
     border-radius: 12px;
     transition: all 0.3 ease;
 }
@@ -82,9 +86,9 @@ header .navbar {
 }
 
 .pesquisa-input {
-    background-color: #111;
+    background-color: #ff2a2a;
     background: transparent;
-    border: 2px solid #ff4d4d;
+    border: none;
     border-radius: 20px;
     padding: 0;
     width: 0;
@@ -95,12 +99,10 @@ header .navbar {
     opacity: 0;
     position: relative;
     right: 0;
-    transition: width 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+    transition: width 0.4s ease, opacity 0.3s ease, padding 0.4s ease, border 0.4s ease;
 }
 
 .pesquisa-btn {
-    background: transparent;
-    border: none;
     color: #ff4d4d;
     cursor: pointer;
     width: 40px;
@@ -108,10 +110,16 @@ header .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0;
     position: absolute;
-    z-index: 12;
+    z-index: 13;
     transition: all 0.3s ease;
+    border: none; /* Remove a borda do botão da lupa */
+    background: transparent; /* Remove o fundo do botão da lupa */
+}
+
+.pesquisa-btn svg {
+    border: none;
+    background: transparent;
 }
 
 .pesquisa-btn svg,
@@ -128,17 +136,170 @@ header .navbar {
     width: 100%;
     opacity: 1;
     padding: 0 45px 0 20px;
+    border: 2px solid #ff4d4d;
+    box-shadow: 0 0 10px #ff4d4d; /* Adiciona um efeito de brilho vermelho ao redor da barra de pesquisa quando ela é expandida (ativada) */
+    color: white;
 }
 
 .pesquisa-container.active .pesquisa-btn,
 .pesquisa-container.active .pesquisa-input {
-    box-shadow: 0 0 10px #ff4d4d;
-    color: white;
+    color: white; /* Muda a cor do ícone da lupa e do texto da barra de pesquisa para branco quando ele é expandido (ativado) */
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 85px;
+    height: calc(100vh - 85px);
+}
+
+.main-section {
+    position: relative;
+    width:100%;
+    height: 100%;
+    overflow: hidden; /* Impede que o conteúdo da seção principal ultrapasse os limites da tela */
 }
 
 .main-image {
-    margin: 0;
-    padding: 50px;
-    width: 1330px;
-    height: 80%;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.60);
+}
+
+.main-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.info-main {
+    display: inline-block;
+    color: #ff2a2a;
+    font-size: 20px;
+    border: 2px solid #ff2a2a; /* Cria uma borda sólida ao redor do texto na cor vermelha */
+    padding: 8px 18px; /* Define o espaçamento interno da borda em relação ao texto (8px no topo e embaixo - 18px na direita e esquerda) */
+    border-radius: 30px;
+    box-shadow: 0 0 8px #ff2a2a; /*Define uma pequena borda com efeito 'neon' na parte externa da borda */
+    margin-bottom: 20px;
+}
+
+.oor-main-subtitle {
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.description-main {
+    font-size: 25px;
+
+}
+
+.btn-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.btn-disco {
+    background: #ff2a2a;
+    color: #fff;
+    border: 2px solid #ff2a2a;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.btn-disco:hover {
+    background: #ff4444;
+    box-shadow: 0 0 18px rgba(255,42,42,.6);
+    transform: translateY(-3px);
+}
+
+.btn-comunidade {
+    background: rgba(0,0,0,.25);
+    color: #fff;
+    border: 2px solid rgba(255,255,255,.15);
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.btn-comunidade:hover {
+    border-color: #ff2a2a;
+    color: #ff2a2a;
+    box-shadow: 0 0 15px rgba(255,42,42,.35);
+    transform: translateY(-3px); /* Faz com que o botão se  desloque para cima ao passar o cursor */
+}
+
+.btn-main i {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.indicador-scroll {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.mouse { /* Desenhando o contorno do mouse */
+    width: 25px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    animation: scroll 1.8s infinite;
+}
+
+.mouse span { /* Bolinha vermelha dentro do "mouse"*/
+    width: 3px;
+    height: 8px;
+    background: #ff2a2a;
+    border-radius: 8px;
+}
+
+@keyframes scroll { /* Adiciona animação de sobe e desce ao mouse com animation: scroll 1.8s infinite; */
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30%{
+        opacity: 1;
+    }
+
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(18px);
+    }
 }
